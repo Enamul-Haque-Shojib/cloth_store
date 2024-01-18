@@ -172,6 +172,7 @@ def clothCartList(request, clothid):
         if cloth.quantity != 0:
             cloth_cartlist = models.ClothCartList.objects.filter(clothid = cloth.clothid, name = cloth.name, author = request.user)
             if cloth_cartlist:
+            
                 s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
@@ -240,6 +241,7 @@ def clothCartListMinus(request, clothid):
         if cloth.quantity != 0:
             cloth_cartlist = models.ClothCartList.objects.filter(clothid = cloth.clothid, name = cloth.name, author = request.user)
             if cloth_cartlist:
+
                 s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
                 if s.quantity > 0:
                     cloth.quantity = cloth.quantity+ 1
