@@ -175,7 +175,7 @@ def clothCartList(request, clothid):
                 s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
-                s.price = s.price * s.quantity
+                s.price = s.price + cloth.price
                 cloth.save()
                 s.save()
                 return redirect('cloth_details',clothid=cloth.clothid)
@@ -215,7 +215,7 @@ def clothCartListPlus(request, clothid):
                 s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
-                s.price = s.price * s.quantity
+                s.price = s.price + cloth.price
                 cloth.save()
                 s.save()
                 return redirect('cloth_cartlist')
@@ -244,7 +244,7 @@ def clothCartListMinus(request, clothid):
                 if s.quantity > 0:
                     cloth.quantity = cloth.quantity+ 1
                     s.quantity = s.quantity - 1
-                    s.price = s.price * s.quantity
+                    s.price = s.price - cloth.price
                     cloth.save()
                     s.save()
                     return redirect('cloth_cartlist')
