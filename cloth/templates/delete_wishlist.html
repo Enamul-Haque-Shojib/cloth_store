@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    
+<h1>Are you sure want to delete from your wish list?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-outline-warning" type="submit">Yes</button>
+</form>
+<button class="btn btn-outline-success"><a href="{% url 'cloth_wishlist' %}">No</a></button>
+
+     
+<script src="{% static 'js/cloth_wishlist.js' %}"></script>
+
+{% endblock %}

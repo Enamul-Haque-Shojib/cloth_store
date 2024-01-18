@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    
+<div class="login-container container">
+    <div class="col-md-6">
+      <h1 class="title mt-5">Please Login</h1>
+      <form method="post">
+        {% csrf_token %}
+        <input
+          value=""
+          id="login-username"
+          type="text"
+          class="input"
+          placeholder="username"
+          required
+        />
+        <input
+          id="login-password"
+          type="password"
+          class="input"
+          placeholder="password"
+          required
+          value=""
+        />
+        <button onclick="handleLogin(event)" class="submit-btn">Login</button>
+        <p><a href="{% url 'reg' %}">go to Registration page</a></p>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <img class="w-100" src="./Images/reg.png" alt="" />
+    </div>
+  </div>
+      
+     
+<script src="{% static 'js/author.js' %}"></script>
+
+{% endblock %}

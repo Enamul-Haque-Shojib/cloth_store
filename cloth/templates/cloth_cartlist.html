@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="row my-5">
+    <h1>cloth cartlist</h1>
+    
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody id="cloth-cartlist">
+ 
+   
+  </tbody>
+</table>
+
+<script src="{% static 'js/cloth_cartlist.js' %}"></script>
+</div>
+
+
+
+{% endblock %}
+
