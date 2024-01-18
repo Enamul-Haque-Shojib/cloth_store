@@ -28,7 +28,7 @@ const displayCloth = (cloths) =>{
         // console.log(cloth)
         
         const div = document.createElement("div");
-        div.className = 'col-sm-6';
+        div.className = 'col-6';
         div.innerHTML = `
         
         <div class="card h-100">
