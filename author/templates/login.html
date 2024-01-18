@@ -13,19 +13,19 @@
           value=""
           id="login-username"
           type="text"
-          class="input"
+          class="input form-control"
           placeholder="username"
           required
         />
         <input
           id="login-password"
           type="password"
-          class="input"
+          class="input form-control"
           placeholder="password"
           required
           value=""
         />
-        <button onclick="handleLogin(event)" class="submit-btn">Login</button>
+        <button onclick="handleLogin(event)" class="submit-btn btn-warning">Login</button>
         <p><a href="{% url 'reg' %}">go to Registration page</a></p>
       </form>
     </div>
