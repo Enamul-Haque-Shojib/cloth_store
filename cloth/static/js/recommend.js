@@ -27,6 +27,7 @@ const displayRecommendCloth = (cloths) =>{
                   <h5 class="card-title">${cloth.name}</h5>
                   <p class="card-text">Price: $${cloth.price}</p>
                   <p class="card-text">Quantity: ${cloth.quantity}</p>
+                  <p class="card-text">Rating: ${cloth.rating}</p>
                   <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
                   
                 </div>
