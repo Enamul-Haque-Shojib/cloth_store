@@ -108,7 +108,7 @@ DATABASES = {
 }
 
 
-CSRF_TRUSTED_ORIGINS = ['','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://cloth-store-3scu.onrender.com','https://*.127.0.0.1']
 
 
 
