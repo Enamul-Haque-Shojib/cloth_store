@@ -9,9 +9,9 @@
     <div class="d-flex flex-row">
         <form method="post">
             {% csrf_token %}
-            <button class="btn btn-warning" type="submit">Yes</button>
+            <button class="btn btn-warning me-5" type="submit">Yes</button>
         </form>
-        <button class="btn btn-success"><a href="{% url 'cloth_wishlist' %}">No</a></button>
+        <button class="btn btn-success text-decoration-underline-none text-black"><a href="{% url 'cloth_wishlist' %}">No</a></button>
     </div>
 
 </div>
