@@ -13,7 +13,7 @@ const displayClothWishList = (cloths) =>{
         console.log(cloth)
         const parent = document.getElementById('cloth-wishlist');
         const div = document.createElement("div");
-        div.className = 'col-sm-3 my-3';
+        div.className = 'col-3 my-3';
         div.innerHTML = `
         
         <div class="card h-100">
