@@ -5,7 +5,7 @@
 
 const loadSize = () =>{
 
-    fetch(`http://127.0.0.1:8000/cloth/size/`)
+    fetch(`https://cloth-store-3scu.onrender.com/cloth/size/`)
     .then((res) => res.json())
     .then((data) => displaySize(data))
     .catch((err) => console.log(err));

@@ -1,7 +1,7 @@
 
 
 const loadClothWishList = () =>{
-    fetch('http://127.0.0.1:8000/cloth/wishlist/')
+    fetch('https://cloth-store-3scu.onrender.com/cloth/wishlist/')
     .then((res) => res.json())
     .then((data) => displayClothWishList(data))
     .catch((err) => console.log(err));
@@ -23,8 +23,8 @@ const displayClothWishList = (cloths) =>{
             <p class="card-text fw-bold">Price: ${cloth.price}</p>
             <p class="card-text">${cloth.description.slice(0,95)}</p>
             <p class="card-text fw-bold">Category: <span class="bg-primary p-2 text-white rounded-2 fw-light">${cloth.category}</span></p>
-            <a href="http://127.0.0.1:8000/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
-            <a class="btn btn-danger" href="http://127.0.0.1:8000/cloth/deletewishlist/${cloth.id}"><i class="fa-solid fa-trash"></i></a>
+            <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
+            <a class="btn btn-danger" href="https://cloth-store-3scu.onrender.com/cloth/deletewishlist/${cloth.id}"><i class="fa-solid fa-trash"></i></a>
           </div>
         </div>
       

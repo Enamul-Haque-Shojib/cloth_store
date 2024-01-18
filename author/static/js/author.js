@@ -31,7 +31,7 @@ const handleRegistration = (event) => {
         .find(row => row.startsWith('csrftoken='))
         .split('=')[1];
   
-        fetch("http://127.0.0.1:8000/author/register/", {
+        fetch("https://cloth-store-3scu.onrender.com/author/register/", {
           method: "POST",
           headers: { "content-type": "application/json", "X-CSRFToken": csrftoken },
           body: JSON.stringify(info),
@@ -39,7 +39,7 @@ const handleRegistration = (event) => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            window.location.href = "http://127.0.0.1:8000/author/reg/";
+            window.location.href = "https://cloth-store-3scu.onrender.com/author/reg/";
           })
           .catch(err => console.error(err));
 
@@ -72,7 +72,7 @@ const handleRegistration = (event) => {
         .split('=')[1];
 
     if ((username, password)) {
-      fetch("http://127.0.0.1:8000/author/login/", {
+      fetch("https://cloth-store-3scu.onrender.com/author/login/", {
         method: "POST",
         headers: { "content-type": "application/json", "X-CSRFToken": csrftoken  },
         body: JSON.stringify({ username, password }),
@@ -84,7 +84,7 @@ const handleRegistration = (event) => {
           if (data.token && data.user_id) {
             localStorage.setItem("token", data.token);
             localStorage.setItem("user_id", data.user_id);
-            window.location.href = "http://127.0.0.1:8000/";
+            window.location.href = "https://cloth-store-3scu.onrender.com/";
           }
         });
     }

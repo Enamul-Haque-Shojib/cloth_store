@@ -7,7 +7,7 @@ const loadRecommendCloth = (querySearch, id) =>{
     console.log(querySearch)
 parent.innerHTML = ``;
 
-    fetch(`http://127.0.0.1:8000/cloth/list/?search=${querySearch}`)
+    fetch(`https://cloth-store-3scu.onrender.com/cloth/list/?search=${querySearch}`)
     .then((res) => res.json())
     .then((data) => displayRecommendCloth(data))
     .catch((err) => console.log(err));
@@ -27,7 +27,7 @@ const displayRecommendCloth = (cloths) =>{
                   <h5 class="card-title">${cloth.name}</h5>
                   <p class="card-text">Price: $${cloth.price}</p>
                   <p class="card-text">Quantity: ${cloth.quantity}</p>
-                  <a href="http://127.0.0.1:8000/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
+                  <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
                   
                 </div>
               </div>

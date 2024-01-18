@@ -5,7 +5,7 @@
 
 const loadColor = () =>{
 
-    fetch(`http://127.0.0.1:8000/cloth/color/`)
+    fetch(`https://cloth-store-3scu.onrender.com/cloth/color/`)
     .then((res) => res.json())
     .then((data) => displayColor(data))
     .catch((err) => console.log(err));

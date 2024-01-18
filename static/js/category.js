@@ -5,7 +5,7 @@
 
 const loadCategory = () =>{
 
-    fetch(`http://127.0.0.1:8000/cloth/category/`)
+    fetch(`https://cloth-store-3scu.onrender.com/cloth/category/`)
     .then((res) => res.json())
     .then((data) => displayCategory(data))
     .catch((err) => console.log(err));

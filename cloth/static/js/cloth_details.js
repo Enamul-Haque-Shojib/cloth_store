@@ -7,7 +7,7 @@ let pathid = path.length;
 let cloth_id = path[pathid-1];
 
 
-fetch(`http://127.0.0.1:8000/cloth/list/${cloth_id}`)
+fetch(`https://cloth-store-3scu.onrender.com/cloth/list/${cloth_id}`)
 .then((res) => res.json())
 .then((data) => displayClothDetails(data));
 
@@ -40,8 +40,8 @@ const displayClothDetails = (cloth) => {
             })}
             </p>
 
-            <a href="http://127.0.0.1:8000/cloth/addcartlist/${cloth.clothid}" class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="http://127.0.0.1:8000/cloth/addwishlist/${cloth.clothid}" class="btn btn-success"><i class="fa-solid fa-heart"></i></a>
+            <a href="https://cloth-store-3scu.onrender.com/cloth/addcartlist/${cloth.clothid}" class="btn btn-success"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="https://cloth-store-3scu.onrender.com/cloth/addwishlist/${cloth.clothid}" class="btn btn-success"><i class="fa-solid fa-heart"></i></a>
            
           </div>
   
