@@ -175,6 +175,7 @@ def clothCartList(request, clothid):
                 s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
+                s.price = s.price + 1
                 cloth.save()
                 s.save()
                 return redirect('cloth_details',clothid=cloth.clothid)
@@ -214,25 +215,14 @@ def clothCartListPlus(request, clothid):
                 s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
+                s.price = s.price + 1
                 cloth.save()
                 s.save()
                 return redirect('cloth_cartlist')
                     
             
             else:
-                # x = models.ClothCartList()
-                # x.clothid = cloth.clothid
-                # x.name = cloth.name
-                # x.price = cloth.price
-                # x.quantity = 1
-                # x.description = cloth.description
-                # x.category = cloth.category
-                # x.author = request.user
-                # x.image = cloth.image
-                # x.rating = cloth.rating
-                # cloth.quantity = cloth.quantity - 1
-                # x.save()
-                # cloth.save()
+               
                 return redirect('cloth_cartlist')
         else:
             messages.warning(request, 'Out of Stock!!')
@@ -254,6 +244,7 @@ def clothCartListMinus(request, clothid):
                 if s.quantity > 0:
                     cloth.quantity = cloth.quantity+ 1
                     s.quantity = s.quantity - 1
+                    s.price = s.price - 1
                     cloth.save()
                     s.save()
                     return redirect('cloth_cartlist')
@@ -262,19 +253,7 @@ def clothCartListMinus(request, clothid):
                     return redirect('cloth_cartlist')
             
             else:
-                # x = models.ClothCartList()
-                # x.clothid = cloth.clothid
-                # x.name = cloth.name
-                # x.price = cloth.price
-                # x.quantity = 1
-                # x.description = cloth.description
-                # x.category = cloth.category
-                # x.author = request.user
-                # x.image = cloth.image
-                # x.rating = cloth.rating
-                # cloth.quantity = cloth.quantity + 1
-                # x.save()
-                # cloth.save()
+               
                 return redirect('cloth_cartlist')
         else:
             messages.warning(request, 'Out of Stock!!')
