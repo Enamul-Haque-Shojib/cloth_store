@@ -35,7 +35,7 @@ const displayCloth = (cloths) =>{
           <div class="card-body">
             <img src="${cloth.image}" class="card-img-top" alt="...">
             <h5 class="card-title">${cloth.name}</h5>
-            <p class="card-text fw-bold">Price: ${cloth.price}</p>
+            <p class="card-text fw-bold">Price: $${cloth.price}</p>
             <p class="card-text fw-bold">Rating: ${cloth.rating}</p>
             <p class="card-text">Description: ${cloth.description.slice(0,95)}</p>
             <p class="card-text fw-bold">Category: <span class="bg-primary p-2 text-white rounded-2 fw-light">${cloth.category}</span></p>
