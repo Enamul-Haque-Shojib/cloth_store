@@ -205,11 +205,11 @@ def clothCartList(request, clothid):
             return redirect('cloth_details',clothid=cloth.clothid)
 
 
-    return render(request, 'cloth_details.html',)
+    return render(request, 'cloth_details.html')
 
 @login_required
 def clothCartListPlus(request, clothid):
-    total_price = 0
+    
     cloth = models.Cloth.objects.get(pk = clothid)
     
     if request.method == 'GET':
@@ -220,32 +220,26 @@ def clothCartListPlus(request, clothid):
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
                 s.price = s.price + cloth.price
-                count_price = 0
-                for obj in models.ClothCartList.objects.all():
-                    count_price += obj.price
-                total_price = count_price
+                
                 cloth.save()
                 s.save()
                 return redirect('cloth_cartlist')
                     
             
             else:
-                count_price = 0
-                for obj in models.ClothCartList.objects.all():
-                    count_price += obj.price
-                total_price = count_price
+               
                 return redirect('cloth_cartlist')
         else:
             messages.warning(request, 'Out of Stock!!')
             return redirect('cloth_cartlist')
 
 
-    return render(request, 'cloth_cartlist.html',{'total_price': total_price})
+    return render(request, 'cloth_cartlist.html')
 
 
 @login_required
 def clothCartListMinus(request, clothid):
-    total_price = 0
+    
     cloth = models.Cloth.objects.get(pk = clothid)
     
     
@@ -259,18 +253,12 @@ def clothCartListMinus(request, clothid):
                     cloth.quantity = cloth.quantity+ 1
                     s.quantity = s.quantity - 1
                     s.price = s.price - cloth.price
-                    count_price = 0
-                    for obj in models.ClothCartList.objects.all():
-                        count_price += obj.price
-                    total_price = count_price
+                   
                     cloth.save()
                     s.save()
                     return redirect('cloth_cartlist')
                 else:
-                    count_price = 0
-                    for obj in models.ClothCartList.objects.all():
-                        count_price += obj.price
-                    total_price = count_price
+                   
                     return redirect('cloth_cartlist')
             
             else:
@@ -281,7 +269,7 @@ def clothCartListMinus(request, clothid):
             return redirect('cloth_cartlist')
 
 
-    return render(request, 'cloth_cartlist.html', {'total_price': total_price})
+    return render(request, 'cloth_cartlist.html')
 
 
 
