@@ -14,7 +14,7 @@ const displayClothCartList = (cloths) =>{
         const tr = document.createElement("tr");
         tr.innerHTML = `
         <td>${cloth.name}</td>
-        <td>${cloth.price}</td>
+        <td>$${cloth.price}</td>
         <td><a class="btn btn-outline-success fw-bold" href="https://cloth-store-3scu.onrender.com/cloth/addcartlistplus/${cloth.clothid}">+</a> ${cloth.quantity} <a class="btn btn-outline-danger fw-bold" href="https://cloth-store-3scu.onrender.com/cloth/addcartlistminus/${cloth.clothid}">-</a></td>
         <td><a class="btn btn-danger" href="https://cloth-store-3scu.onrender.com/cloth/deletecartlist/${cloth.id}"><i class="fa-solid fa-trash"></i></a></td>
       

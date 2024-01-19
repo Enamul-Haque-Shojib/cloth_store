@@ -166,17 +166,22 @@ def clothWishList(request, clothid):
 
 @login_required
 def clothCartList(request, clothid):
+    total_cartlist_price = models.ClothCartList.objects.all()
     cloth = models.Cloth.objects.get(pk = clothid)
     
     if request.method == 'GET':
         if cloth.quantity != 0:
             cloth_cartlist = models.ClothCartList.objects.filter(clothid = cloth.clothid, name = cloth.name, author = request.user)
             if cloth_cartlist:
-            
                 s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
                 s.price = s.price + cloth.price
+                count_price = 0
+                for obj in models.ClothCartList.objects.all():
+                    count_price += obj
+                s.total_price = count_price
+
                 cloth.save()
                 s.save()
                 return redirect('cloth_details',clothid=cloth.clothid)
@@ -194,6 +199,10 @@ def clothCartList(request, clothid):
                 x.image = cloth.image
                 x.rating = cloth.rating
                 cloth.quantity = cloth.quantity - 1
+                count_price = 0
+                for obj in models.ClothCartList.objects.all():
+                    count_price += obj
+                x.total_price = count_price
                 x.save()
                 cloth.save()
                 messages.success(request, 'The item is added in CardList')
@@ -203,10 +212,11 @@ def clothCartList(request, clothid):
             return redirect('cloth_details',clothid=cloth.clothid)
 
 
-    return render(request, 'cloth_details.html')
+    return render(request, 'cloth_details.html', {'total_price': total_cartlist_price.total_price})
 
 @login_required
 def clothCartListPlus(request, clothid):
+    total_cartlist_price = models.ClothCartList.objects.all()
     cloth = models.Cloth.objects.get(pk = clothid)
     
     if request.method == 'GET':
@@ -217,6 +227,10 @@ def clothCartListPlus(request, clothid):
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
                 s.price = s.price + cloth.price
+                count_price = 0
+                for obj in models.ClothCartList.objects.all():
+                    count_price += obj
+                s.total_price = count_price
                 cloth.save()
                 s.save()
                 return redirect('cloth_cartlist')
@@ -230,12 +244,13 @@ def clothCartListPlus(request, clothid):
             return redirect('cloth_cartlist')
 
 
-    return render(request, 'cartlist.html')
+    return render(request, 'cartlist.html',{'total_price': total_cartlist_price.total_price})
 
 
 @login_required
 def clothCartListMinus(request, clothid):
     cloth = models.Cloth.objects.get(pk = clothid)
+    total_cartlist_price = models.ClothCartList.objects.all()
     
     if request.method == 'GET':
         if cloth.quantity != 0:
@@ -247,6 +262,10 @@ def clothCartListMinus(request, clothid):
                     cloth.quantity = cloth.quantity+ 1
                     s.quantity = s.quantity - 1
                     s.price = s.price - cloth.price
+                    count_price = 0
+                    for obj in models.ClothCartList.objects.all():
+                        count_price += obj
+                    s.total_price = count_price
                     cloth.save()
                     s.save()
                     return redirect('cloth_cartlist')
@@ -262,7 +281,7 @@ def clothCartListMinus(request, clothid):
             return redirect('cloth_cartlist')
 
 
-    return render(request, 'cartlist.html')
+    return render(request, 'cartlist.html', {'total_price': total_cartlist_price.total_price})
 
 
 
