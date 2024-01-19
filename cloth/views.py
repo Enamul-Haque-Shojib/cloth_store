@@ -166,7 +166,7 @@ def clothWishList(request, clothid):
 
 @login_required
 def clothCartList(request, clothid):
-    total_price=0
+
     cloth = models.Cloth.objects.get(pk = clothid)
     
     if request.method == 'GET':
@@ -177,10 +177,7 @@ def clothCartList(request, clothid):
                 cloth.quantity = cloth.quantity-1
                 s.quantity = s.quantity + 1
                 s.price = s.price + cloth.price
-                count_price = 0
-                for obj in models.ClothCartList.objects.all():
-                    count_price += obj.price
-                total_price = count_price
+             
 
                 cloth.save()
                 s.save()
@@ -199,10 +196,6 @@ def clothCartList(request, clothid):
                 x.image = cloth.image
                 x.rating = cloth.rating
                 cloth.quantity = cloth.quantity - 1
-                count_price = 0
-                for obj in models.ClothCartList.objects.all():
-                    count_price += obj.price
-                total_price = count_price
                 x.save()
                 cloth.save()
                 messages.success(request, 'The item is added in CardList')
@@ -212,7 +205,7 @@ def clothCartList(request, clothid):
             return redirect('cloth_details',clothid=cloth.clothid)
 
 
-    return render(request, 'cloth_details.html', {'total_price': total_price})
+    return render(request, 'cloth_details.html',)
 
 @login_required
 def clothCartListPlus(request, clothid):
@@ -247,7 +240,7 @@ def clothCartListPlus(request, clothid):
             return redirect('cloth_cartlist')
 
 
-    return render(request, 'cartlist.html',{'total_price': total_price})
+    return render(request, 'cloth_cartlist.html',{'total_price': total_price})
 
 
 @login_required
@@ -288,7 +281,7 @@ def clothCartListMinus(request, clothid):
             return redirect('cloth_cartlist')
 
 
-    return render(request, 'cartlist.html', {'total_price': total_price})
+    return render(request, 'cloth_cartlist.html', {'total_price': total_price})
 
 
 
