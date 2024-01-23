@@ -84,7 +84,8 @@ const displayCategory = (categories) =>{
         div.className = 'col text-dark btn btn-outline-warning';
         div.innerHTML = `
         <div onclick="searchItem('${category.name}')">${category.name}</div>
-        `;   
+        `;  
+         
         parent.appendChild(div);     
     });
 }
