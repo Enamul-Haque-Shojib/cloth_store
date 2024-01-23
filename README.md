@@ -1,0 +1,1 @@
+This is a cloth store website. In this website, user must register to purchase. There are many type of products where user can add their choses product  add in wish and card list. After adding product in the card, user can increase  or decrease  quantity and buy and also delete from wish and card list if they want.
