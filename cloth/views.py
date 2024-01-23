@@ -300,6 +300,12 @@ def BuyNow(request):
     context= {}    
     return render(request, 'cloth_cartlist.html', context)
 
+def deleteWishlistAll(request):
+    
+    models.ClothWishList.objects.all().delete()
+    context= {}    
+    return render(request, 'cloth_wishlist.html', context)
+
 
 
 
