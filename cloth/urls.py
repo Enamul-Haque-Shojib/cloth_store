@@ -22,7 +22,7 @@ urlpatterns = [
     path('addcartlistminus/<int:clothid>', views.clothCartListMinus, name='add_cartlist_minus' ),
     path('deletecartlist/<int:pk>', views.ClothCardListDeleteView.as_view(), name='delete_cartlist' ),
     path('deletewishlist/<int:pk>', views.ClothWishListDeleteView.as_view(), name='delete_wishlist' ),
-    path('deletewishlistall/<int:pk>', views.deleteWishlistAll, name='delete_wishlist_all' ),
+    path('deletewishlistall/', views.deleteWishlistAll, name='delete_wishlist_all' ),
     path('buynowcartlist/', views.BuyNow, name='buynow_cartlist' ),
     
 ]
