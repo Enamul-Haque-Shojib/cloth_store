@@ -7,7 +7,7 @@ const loadClothDetails=()=>{
     let cloth_id = path[pathid-1];
     
     
-    fetch(`http://127.0.0.1:8000/cloth/list/${cloth_id}`)
+    fetch(`https://cloth-store-3scu.onrender.com/cloth/list/${cloth_id}`)
     .then((res) => res.json())
     .then((data) => displayClothDetails(data));
     
@@ -70,8 +70,8 @@ const loadClothDetails=()=>{
         })}
         </p>
 
-        <a href="http://127.0.0.1:8000/cloth/addcartlist/${cloth.clothid}" class="btn btn-success fs-5">Add to Card<i class="fa-solid fa-cart-shopping ms-1"></i></a>
-        <a href="http://127.0.0.1:8000/cloth/addwishlist/${cloth.clothid}" class="btn btn-success fs-5">Add to wish<i class="fa-solid fa-heart ms-1"></i></a>
+        <a href="https://cloth-store-3scu.onrender.com/cloth/addcartlist/${cloth.clothid}" class="btn btn-success fs-5">Add to Card<i class="fa-solid fa-cart-shopping ms-1"></i></a>
+        <a href="https://cloth-store-3scu.onrender.com/cloth/addwishlist/${cloth.clothid}" class="btn btn-success fs-5">Add to wish<i class="fa-solid fa-heart ms-1"></i></a>
         </div>
       </div>
       
@@ -90,7 +90,7 @@ const loadClothDetails=()=>{
 
 
 const loadClothCartList = () =>{
-    fetch('http://127.0.0.1:8000/cloth/cartlist/')
+    fetch('https://cloth-store-3scu.onrender.com/cloth/cartlist/')
     .then((res) => res.json())
     .then((data) => displayClothCartList(data))
     .catch((err) => console.log(err));
@@ -106,14 +106,14 @@ const deletecartlist = (id) => {
         .split('; ')
         .find(row => row.startsWith('csrftoken='))
         .split('=')[1];
-    fetch(`http://127.0.0.1:8000/cloth/deletecartlist/${id}`, {
+    fetch(`https://cloth-store-3scu.onrender.com/cloth/deletecartlist/${id}`, {
     method: 'DELETE',
     headers: { "content-type": "application/json", "X-CSRFToken": csrftoken },
     
     })
   .then(data => {
     // console.log(data);
-    window.location.href = "http://127.0.0.1:8000/cloth/clothcartlist/";
+    window.location.href = "https://cloth-store-3scu.onrender.com/cloth/clothcartlist/";
   })
   .catch(err => console.log(err));
 }
@@ -125,9 +125,9 @@ const displayClothCartList = (cloths) =>{
         const tr = document.createElement("tr");
         tr.innerHTML = `
         <td><img src="${cloth.image}" class="cdlist-image" alt="..."></td>
-        <td><a href="http://127.0.0.1:8000/cloth/clothdetails/${cloth.clothid}">${cloth.name}</a></td>
+        <td><a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}">${cloth.name}</a></td>
         <td>$${cloth.price}</td>
-        <td><a class="btn btn-outline-success fw-bold" href="http://127.0.0.1:8000/cloth/addcartlistplus/${cloth.clothid}">+</a> ${cloth.quantity} <a class="btn btn-outline-danger fw-bold" href="http://127.0.0.1:8000/cloth/addcartlistminus/${cloth.clothid}">-</a></td>
+        <td><a class="btn btn-outline-success fw-bold" href="https://cloth-store-3scu.onrender.com/cloth/addcartlistplus/${cloth.clothid}">+</a> ${cloth.quantity} <a class="btn btn-outline-danger fw-bold" href="https://cloth-store-3scu.onrender.com/cloth/addcartlistminus/${cloth.clothid}">-</a></td>
         <td><button class="btn btn-danger" onclick="deletecartlist(${cloth.id})"><i class="fa-solid fa-trash"></i></button></td>
       
         `;   
@@ -143,7 +143,7 @@ loadClothCartList();
 
 
 const loadClothWishList = () =>{
-    fetch('http://127.0.0.1:8000/cloth/wishlist/')
+    fetch('https://cloth-store-3scu.onrender.com/cloth/wishlist/')
     .then((res) => res.json())
     .then((data) => displayClothWishList(data))
     .catch((err) => console.log(err));
@@ -156,14 +156,14 @@ const deletewishlist = (id) => {
       .split('; ')
       .find(row => row.startsWith('csrftoken='))
       .split('=')[1];
-  fetch(`http://127.0.0.1:8000/cloth/deletewishlist/${id}`, {
+  fetch(`https://cloth-store-3scu.onrender.com/cloth/deletewishlist/${id}`, {
   method: 'DELETE',
   headers: { "content-type": "application/json", "X-CSRFToken": csrftoken },
   
   })
 .then(data => {
   // console.log(data);
-  window.location.href = "http://127.0.0.1:8000/cloth/clothwishlist/";
+  window.location.href = "https://cloth-store-3scu.onrender.com/cloth/clothwishlist/";
 })
 .catch(err => console.log(err));
 }
@@ -185,7 +185,7 @@ const displayClothWishList = (cloths) =>{
             <p class="card-text m-0">Price: ${cloth.price}</p>
             <p class="card-text mb-1">Rating: ${cloth.rating}</p>
             <p class="card-text">Category: <span class="bg-primary p-2 text-white rounded-2 fw-light">${cloth.category}</span></p>
-            <a href="http://127.0.0.1:8000/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
+            <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
             <button class="btn btn-danger" onclick="deletewishlist(${cloth.id})"><i class="fa-solid fa-trash"></i></button>
           </div>
         </div>
@@ -210,7 +210,7 @@ const loadRecommendCloth = (querySearch, id) =>{
     console.log(querySearch)
 parent.innerHTML = ``;
 
-    fetch(`http://127.0.0.1:8000/cloth/list/?search=${querySearch}`)
+    fetch(`https://cloth-store-3scu.onrender.com/cloth/list/?search=${querySearch}`)
     .then((res) => res.json())
     .then((data) => displayRecommendCloth(data))
     .catch((err) => console.log(err));
@@ -231,7 +231,7 @@ const displayRecommendCloth = (cloths) =>{
                   <p class="card-text m-0">Price: $${cloth.price}</p>
                   <p class="card-text m-0">Quantity: ${cloth.quantity}</p>
                   <p class="card-text mb-1-0">Rating: ${cloth.rating}</p>
-                  <a href="http://127.0.0.1:8000/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning d-flex justify-content-center align-items-center' >View Details</a>
+                  <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning d-flex justify-content-center align-items-center' >View Details</a>
                   
                 </div>
               </div>
