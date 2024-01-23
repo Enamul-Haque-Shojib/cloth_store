@@ -10,13 +10,12 @@
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{% static 'images/profile.webp' %}" class="img-fluid rounded-start" alt="...">
-        <h5 class="card-title">User Name: {{request.user.username}}</h5>
         
         
       </div>
       <div class="col-md-8">
         <div class="card-body">
-         
+          <h5 class="card-title">User Name: {{request.user.username}}</h5>
           <p class="card-text">First Name: {{request.user.first_name}}</p>
           <p class="card-text">Last Name: {{request.user.last_name}}</p>
           <p class="card-text"> Email: {{request.user.email}}</p>

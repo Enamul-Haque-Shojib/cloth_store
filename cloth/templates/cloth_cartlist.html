@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="row my-5">
-    <h1>cloth cardlist</h1>
+    <h1 class="">cloth cardlist</h1>
     
 </div>
 
@@ -15,6 +15,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">Image</th>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
       <th scope="col">Quantity</th>
@@ -26,11 +27,18 @@
    
   </tbody>
 </table>
+{% if total_price %}
+<h3>Total Price: ${{total_price}}</h3>
+{% else %}
+<h3>Total Price: $0</h3>
+{% endif %}
+
+<a class="btn btn-success"  href="{% url 'buynow_cartlist' %}">Buy Now</a>
 
 
-
-<script src="{% static 'js/cloth_cartlist.js' %}"></script>
 </div>
+
+<script src="{% static 'js/clothlist2.js' %}"></script>
 
 
 

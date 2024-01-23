@@ -11,55 +11,71 @@
 <div class="container">
 
   <div class="row my-4">
-    <div class="col-md-9">
+    <div class="col-lg-12 col-sm-12">
 
-      <div id="cloth-details" class="mt-4">
+      
 
+
+
+      <div class="card mb-3 p-5" id="cloth-details">
+        <div class="row g-0">
+         
+        </div>
       </div>
-      
-      <div class="my-5">
-          <div class="card-body">
-            <h5 class="my-3">Total Reviews : {{reviews | length}}</h5>
-            
-              {% for review in reviews %}
-              <div class="border p-3 mt-2">
-              <p><span class="fw-bold">{{review.author.first_name}} {{review.author.last_name}}</span> {{review.created}}</p>
-              <p>{{review.body}}</p>
-              <p>Rating: {{review.rating}}</p>
-            </div>
-              {% endfor %}
-            
-          </div>
-        </div>
-      
-        {% if request.user.is_authenticated %}
-        <div class="my-5">
-          <div class="card-body">
-            
-            {% if review_form %}
-              <h5>Add Review</h5>
-              <form method="post">
-                  {% csrf_token %}
-                  {{review_form | crispy}}
-                  <button class="btn btn-warning">Submit</button>
-              </form>
-            {% endif %}
-          
-          </div>
-        </div>
-        {% endif %}
-    </div>
-    <div class="col-6 col-md-3">
+
+    
+
+
+
+
       <h4>Recommended</h4>
-      <div class="row row-cols-1 row-cols-md-1 g-4" id="recommend-container">
+      <div class="row row-cols-lg-4 row-cols-sm-12 g-4" id="recommend-container">
 
       </div>
+
+
+      
+     
+    </div>
+    <div class="col-lg-12 col-sm-12">
+      <div class="my-5">
+        <div class="card-body">
+          <h5 class="my-3">Total Reviews : {{reviews | length}}</h5>
+          
+            {% for review in reviews %}
+            <div class="border p-3 mt-2">
+            <p><span class="fw-bold">{{review.author.first_name}} {{review.author.last_name}}</span> {{review.created}}</p>
+            <p>{{review.body}}</p>
+            <p>Rating: {{review.rating}}</p>
+          </div>
+            {% endfor %}
+          
+        </div>
+      </div>
+    
+      {% if request.user.is_authenticated %}
+      <div class="my-5">
+        <div class="card-body">
+          
+          {% if review_form %}
+            <h5>Add Review</h5>
+            <form method="post">
+                {% csrf_token %}
+                {{review_form | crispy}}
+                <button class="btn btn-warning">Submit</button>
+            </form>
+          {% endif %}
+        
+        </div>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>
 
+
+<script src="{% static 'js/clothlist2.js' %}"></script>
      
-<script src="{% static 'js/cloth_details.js' %}"></script>
-<script src="{% static 'js/recommend.js' %}"></script>
+
 
 {% endblock %}

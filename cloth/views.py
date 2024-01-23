@@ -11,6 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from rest_framework.response import Response
+from rest_framework import generics
 
 
 class ClothViewSet(viewsets.ModelViewSet):
@@ -121,6 +122,14 @@ class ClothWishListView(TemplateView):
 
 class ClothCartListView(TemplateView):
     template_name = 'cloth_cartlist.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        count_price = 0
+        for obj in models.ClothCartList.objects.all():
+            count_price = count_price + obj.price
+        print(count_price)
+        context = {'total_price' : count_price}
+        return context
 
 
 @login_required
@@ -234,7 +243,7 @@ def clothCartListPlus(request, clothid):
             return redirect('cloth_cartlist')
 
 
-    return render(request, 'cloth_cartlist.html')
+    return render(request, 'cloth_cartlist.html', {'total_price':'100'})
 
 
 @login_required
@@ -244,28 +253,24 @@ def clothCartListMinus(request, clothid):
     
     
     if request.method == 'GET':
-        if cloth.quantity != 0:
-            cloth_cartlist = models.ClothCartList.objects.filter(clothid = cloth.clothid, name = cloth.name, author = request.user)
-            if cloth_cartlist:
+        
+        cloth_cartlist = models.ClothCartList.objects.filter(clothid = cloth.clothid, name = cloth.name, author = request.user)
+        if cloth_cartlist:
 
-                s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
-                if s.quantity > 0:
-                    cloth.quantity = cloth.quantity+ 1
-                    s.quantity = s.quantity - 1
-                    s.price = s.price - cloth.price
+            s = models.ClothCartList.objects.get(clothid = cloth.clothid, name = cloth.name, author=request.user)
+            if s.quantity > 0:
+                cloth.quantity = cloth.quantity+ 1
+                s.quantity = s.quantity - 1
+                s.price = s.price - cloth.price
                    
-                    cloth.save()
-                    s.save()
-                    return redirect('cloth_cartlist')
-                else:
-                   
-                    return redirect('cloth_cartlist')
-            
-            else:
-               
+                cloth.save()
+                s.save()
                 return redirect('cloth_cartlist')
+            else:
+                   
+                return redirect('cloth_cartlist')
+            
         else:
-            messages.warning(request, 'Out of Stock!!')
             return redirect('cloth_cartlist')
 
 
@@ -275,18 +280,25 @@ def clothCartListMinus(request, clothid):
 
 
 
-class ClothCardListDeleteView(DeleteView):
-     model = models.ClothCartList
-     pk_url_kwarg = 'id'
-     template_name = 'delete_cartlist.html'
-     success_url = reverse_lazy('cloth_cartlist')
+class ClothCardListDeleteView(generics.DestroyAPIView):
+    queryset = models.ClothCartList.objects.all()
+    serializer_class = serializers.ClothCartListSerializer
 
-class ClothWishListDeleteView(DeleteView):
-     model = models.ClothWishList
-     pk_url_kwarg = 'id'
-     template_name = 'delete_wishlist.html'
-     success_url = reverse_lazy('cloth_wishlist')
+    
 
+
+class ClothWishListDeleteView(generics.DestroyAPIView):
+    queryset = models.ClothWishList.objects.all()
+    serializer_class = serializers.ClothWishListSerializer
+
+    
+
+
+def BuyNow(request):
+    
+    models.ClothCartList.objects.all().delete()
+    context= {}    
+    return render(request, 'cloth_cartlist.html', context)
 
 
 

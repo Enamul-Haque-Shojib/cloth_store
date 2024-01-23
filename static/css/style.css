@@ -27,6 +27,87 @@
 }
 
 
+.text{
+    border: 3px solid red;
+}
+
+
+.card-image{
+    width: 100px;
+    height: 350px;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+.color-image{
+    
+    width: 20px;
+    height: 20px;
+}
+.color-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.rec-image{
+    width: 100px;
+    height: 250px;
+}
+.rec-image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.cdlist-image{
+    width: 70px;
+    height: 90px;
+}
+.cdlist-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.wish-image{
+    width: 100px;
+    height: 300px;
+}
+.wish-image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+
+
+    .banner-page{
+        width: 100vh;
+        height: 90vh;
+    }
+    
+    .banner-image{
+        width: 500px;
+        height: 300px;
+    }
+    
+    .banner-image img{
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
 
 
 

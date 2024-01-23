@@ -3,13 +3,13 @@
 {% block content %}
 
 
-<div class="d-flex flex-row justify-content-evenly align-items-center container banner-page">
-  <div>
+<div class="d-lg-flex flex-lg-row d-sm-flex flex-sm-column justify-content-evenly align-items-center container banner-page">
+  <div class="order-lg-1 order-sm-2">
       <h1 class="text-danger">Gorgeous Boutique</h1>
       <p>Gorgeous Boutique is a contemporary clothing store in the heart of downtown that offers chic and stylish clothing for both men and women. From romantic lace and flowy maxi dresses to edgy leather jackets and timeless trench coats, this store has something for everyone.</p>
       <h4 class="text-danger">Welcome Home</h4>
   </div>
-  <div>
+  <div class="order-lg-2 order-sm-1">
       <div class="banner-image">
           <img  src="{% static 'images/banner.jpg' %}" alt="cloth">
       </div>
@@ -17,7 +17,7 @@
 </div>
 
 <div class="input-group my-3 container">
-  <input type="text" class="form-control w-75" placeholder="Search here" aria-label="Recipient's username" aria-describedby="button-addon2" id="search">
+  <input type="text" class="form-control" placeholder="Search here" aria-label="Recipient's username" aria-describedby="button-addon2" id="search">
   <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="handleSearch()">Search</button>
 </div>
 
@@ -36,8 +36,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-1">
-      <div class="d-flex flex-column gap-5 my-3">
+    <div class="col-lg-1">
+      <div class="d-lg-flex flex-lg-column d-sm-flex flex-sm-row gap-5 my-3">
 
         <div class="dropdown">
           <button class="btn btn-warning  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,8 +68,8 @@
         </div>
       </div>
     </div>
-    <div class="col-11">
-      <div class="row" id="cloth-container">
+    <div class="col-lg-11">
+      <div class="row ms-lg-2" id="cloth-container">
  
       </div>
     </div>
@@ -85,8 +85,5 @@
 
 
 
-  <script src="{% static 'js/cloth.js' %}"></script>
-  <script src="{% static 'js/category.js' %}"></script>
-  <script src="{% static 'js/color.js' %}"></script>
-  <script src="{% static 'js/size.js' %}"></script>
+
 {% endblock %}

@@ -20,6 +20,7 @@ urlpatterns = [
     path('addcartlist/<int:clothid>', views.clothCartList, name='add_cartlist' ),
     path('addcartlistplus/<int:clothid>', views.clothCartListPlus, name='add_cartlist_plus' ),
     path('addcartlistminus/<int:clothid>', views.clothCartListMinus, name='add_cartlist_minus' ),
-    path('deletecartlist/<int:id>', views.ClothCardListDeleteView.as_view(), name='delete_cartlist' ),
-    path('deletewishlist/<int:id>', views.ClothWishListDeleteView.as_view(), name='delete_wishlist' ),
+    path('deletecartlist/<int:pk>', views.ClothCardListDeleteView.as_view(), name='delete_cartlist' ),
+    path('deletewishlist/<int:pk>', views.ClothWishListDeleteView.as_view(), name='delete_wishlist' ),
+    path('buynowcartlist/', views.BuyNow, name='buynow_cartlist' ),
 ]

@@ -1,19 +1,39 @@
-
+console.log("wisht")
 
 const loadClothWishList = () =>{
-    fetch('https://cloth-store-3scu.onrender.com/cloth/wishlist/')
+    fetch('http://127.0.0.1:8000/cloth/wishlist/')
     .then((res) => res.json())
     .then((data) => displayClothWishList(data))
     .catch((err) => console.log(err));
 };
 
 
+
+const deletewishlist = (id) => {
+  const csrftoken = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('csrftoken='))
+      .split('=')[1];
+  fetch(`http://127.0.0.1:8000/cloth/deletewishlist/${id}`, {
+  method: 'DELETE',
+  headers: { "content-type": "application/json", "X-CSRFToken": csrftoken },
+  
+  })
+.then(data => {
+  // console.log(data);
+  window.location.href = "http://127.0.0.1:8000/cloth/clothwishlist/";
+})
+.catch(err => console.log(err));
+}
+
+
+
 const displayClothWishList = (cloths) =>{
     cloths.forEach(cloth => {
-        console.log(cloth)
+        // console.log(cloth)
         const parent = document.getElementById('cloth-wishlist');
         const div = document.createElement("div");
-        div.className = 'col-3 my-3';
+        div.className = 'col-lg-3 col-sm-1 my-3';
         div.innerHTML = `
         
         <div class="card h-100">
@@ -23,8 +43,8 @@ const displayClothWishList = (cloths) =>{
             <p class="card-text fw-bold">Price: ${cloth.price}</p>
             <p class="card-text">${cloth.description.slice(0,95)}</p>
             <p class="card-text fw-bold">Category: <span class="bg-primary p-2 text-white rounded-2 fw-light">${cloth.category}</span></p>
-            <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
-            <a class="btn btn-danger" href="https://cloth-store-3scu.onrender.com/cloth/deletewishlist/${cloth.id}"><i class="fa-solid fa-trash"></i></a>
+            <a href="http://127.0.0.1:8000/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning' >View Details</a>
+            <button class="btn btn-danger" onclick="deletewishlist(${cloth.id})"><i class="fa-solid fa-trash"></i></button>
           </div>
         </div>
       
@@ -32,5 +52,8 @@ const displayClothWishList = (cloths) =>{
         parent.appendChild(div);     
     });
 }
+
+
+
 
 loadClothWishList();
