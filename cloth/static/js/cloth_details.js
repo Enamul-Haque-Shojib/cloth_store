@@ -14,8 +14,9 @@ fetch(`https://cloth-store-3scu.onrender.com/cloth/list/${cloth_id}`)
 }
 
 
+
 const displayClothDetails = (cloth) => {
-    // console.log(">>>>>>>>>>>>>>>>>",cloth.category);
+
     loadRecommendCloth(cloth.category, cloth.clothid);
     const parent = document.getElementById('cloth-details');
     const div = document.createElement("div");
