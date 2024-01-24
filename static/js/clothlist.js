@@ -170,7 +170,7 @@ const displayCloth = (cloths) =>{
             <p class="card-text"> Size:
             ${cloth.Size.map((item) => {
                 return `<span>${item}</span>`
-            })}
+            }).join(", ")}
             </p>
             <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning d-flex justify-content-center align-item-center'>View Details</a>
             

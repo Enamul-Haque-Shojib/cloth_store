@@ -67,7 +67,7 @@ const loadClothDetails=()=>{
         <p class="card-text fw-bold"> Size:
         ${cloth.Size.map((item) => {
             return `<span>${item}</span>`
-        })}
+        }).join(', ')}
         </p>
 
         <a href="https://cloth-store-3scu.onrender.com/cloth/addcartlist/${cloth.clothid}" class="btn btn-success fs-5">Add to Card<i class="fa-solid fa-cart-shopping ms-1"></i></a>
