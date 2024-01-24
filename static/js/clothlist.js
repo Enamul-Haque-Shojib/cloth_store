@@ -165,7 +165,7 @@ const displayCloth = (cloths) =>{
                     return `<span><img src="../static/images/blue.png" class="color-image" alt="..."></span>`
                 }
                 
-            })}
+            }).join(' ')}
             </p>
             <p class="card-text"> Size:
             ${cloth.Size.map((item) => {
