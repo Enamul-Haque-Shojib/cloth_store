@@ -36,7 +36,7 @@ const loadClothDetails=()=>{
         <p class="card-text fw-bold">Category: <span class="bg-primary p-2 text-white rounded-2 fw-light">${cloth.category}</span></p>
         <p class="card-text fw-bold">Quantity: <span class="fw-bold">${cloth.quantity}</span></p>
         <p class="card-text"> Color:
-        ${cloth.color.join(" ").map((item) => {
+        ${cloth.color.map((item) => {
             if (item=='Red'){
                 return `<span><img src="../../static/images/red.png" class="color-image" alt="..."></span>`
             }else if(item=='Black'){
@@ -61,7 +61,7 @@ const loadClothDetails=()=>{
                 return `<span><img src="../../static/images/blue.png" class="color-image" alt="..."></span>`
             }
             
-        })}
+        }).join(' ')}
         </p>
   
         <p class="card-text fw-bold"> Size:
