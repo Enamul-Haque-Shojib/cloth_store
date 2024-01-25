@@ -3,18 +3,43 @@
 {% block content %}
 
 
-<div class="d-lg-flex flex-lg-row d-sm-flex flex-sm-column justify-content-evenly align-items-center container banner-page">
-  <div class="order-lg-1 order-sm-2">
-      <h1 class="text-danger">Gorgeous Boutique</h1>
-      <p>Gorgeous Boutique is a contemporary clothing store in the heart of downtown that offers chic and stylish clothing for both men and women. From romantic lace and flowy maxi dresses to edgy leather jackets and timeless trench coats, this store has something for everyone.</p>
-      <h4 class="text-danger">Welcome Home</h4>
-  </div>
-  <div class="order-lg-2 order-sm-1">
-      <div class="banner-image">
-          <img  src="{% static 'images/banner.jpg' %}" alt="cloth">
+
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active  h-100 c-item">
+      <img src="{% static 'images/banner1.png' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-lg-block d-block h-100 text-lg-center text-sm-center d-lg-flex d-sm-flex flex-lg-column flex-sm-column justify-content-center justify-content-sm-center align-items-center align-items-sm-center">
+        <h1 class="banner-txt opacity-75">NEW AMAZING STUFF IS HERE</h1>
+        
       </div>
+    </div>
+    <div class="carousel-item  h-100 c-item">
+      <img src="{% static 'images/banner2.png' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-block d-lg-block h-100 text-lg-center text-sm-center d-lg-flex d-sm-flex flex-lg-column flex-sm-column justify-content-center justify-content-sm-center align-items-center align-items-sm-center">
+        <h1 class="banner-txt opacity-75">FASHION CHANGING ALWAYS</h1>
+        
+      </div>
+    </div>
+    <div class="carousel-item  h-100 c-item">
+      <img src="{% static 'images/banner3.png' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-block d-lg-block h-100 text-lg-center text-sm-center d-lg-flex d-sm-flex flex-lg-column flex-sm-column justify-content-center justify-content-sm-center align-items-center align-items-sm-center">
+        <h1 class="banner-txt opacity-75">HIGHEST QUALITY COLLECTION</h1>
+      
+      </div>
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
+
 
 <div class="input-group my-3 container">
   <input type="text" class="form-control" placeholder="Search here" aria-label="Recipient's username" aria-describedby="button-addon2" id="search">
@@ -26,7 +51,7 @@
 
 <div class="container text-center my-3" >
 
-  <div class="row row-cols-6" id="category-container">
+  <div class="row row-cols-4" id="category-container">
       
   </div>
 </div>
