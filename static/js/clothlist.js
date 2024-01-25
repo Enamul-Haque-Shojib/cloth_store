@@ -97,12 +97,15 @@ const displayCategory = (categories) =>{
         const div = document.createElement("div");
         if (count_cat == 1){
             div.className = 'card card_small';
+            div.style.backgroundImage = `url('${category.image}')`;
             count_cat++;
         }else if(count_cat==2){
             div.className = 'card card_medium';
+            div.style.backgroundImage = `url('${category.image}')`;
             count_cat++;
         }else if(count_cat==3){
-            div.className = 'card large_small';
+            div.className = 'card large_large';
+            div.style.backgroundImage = `url('${category.image}')`;
             count_cat++;
         }else{
             count_cat=1;
