@@ -29,12 +29,18 @@
 
 .card_small{
     grid-row-end: span var(--card_small);
+    width: 50px;
+    height: 100px;
 }
 .card_medium{
     grid-row-end: span var(--card_medium);
+    width: 50px;
+    height: 100px;
 }
 .card_large{
     grid-row-end: span var(--card_large);
+    width: 50px;
+    height: 100px;
 }
 
 
