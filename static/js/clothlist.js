@@ -104,7 +104,7 @@ const displayCategory = (categories) =>{
             div.style.backgroundImage = `url('${category.image}')`;
             count_cat++;
         }else if(count_cat==3){
-            div.className = 'card large_large';
+            div.className = 'card card_large';
             div.style.backgroundImage = `url('${category.image}')`;
             count_cat++;
         }else{
