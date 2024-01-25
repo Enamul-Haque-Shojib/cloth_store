@@ -76,12 +76,38 @@ const loadCategory = () =>{
 };
 
 
+// const displayCategory = (categories) =>{
+//     const parent = document.getElementById('category-container');
+//     categories.forEach(category => {
+//         // console.log(category)
+//         const div = document.createElement("div");
+//         div.className = 'col text-dark btn btn-outline-warning';
+//         div.innerHTML = `
+//         <div onclick="searchItem('${category.name}')">${category.name}</div>
+//         `;  
+         
+//         parent.appendChild(div);     
+//     });
+// }
 const displayCategory = (categories) =>{
     const parent = document.getElementById('category-container');
+    let count_cat = 1;
     categories.forEach(category => {
         // console.log(category)
         const div = document.createElement("div");
-        div.className = 'col text-dark btn btn-outline-warning';
+        if (count_cat == 1){
+            div.className = 'card card_small';
+            count_cat++;
+        }else if(count_cat==2){
+            div.className = 'card card_medium';
+            count_cat++;
+        }else if(count_cat==3){
+            div.className = 'card large_small';
+            count_cat++;
+        }else{
+            count_cat=1;
+        }
+        
         div.innerHTML = `
         <div onclick="searchItem('${category.name}')">${category.name}</div>
         `;  

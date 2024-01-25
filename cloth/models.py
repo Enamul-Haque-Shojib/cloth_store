@@ -21,6 +21,7 @@ class Size(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=30)
     slug = models.SlugField(max_length=40)
+    image = models.ImageField(upload_to='cloth/images', null=True, blank=True)
     def __str__(self):
         return self.name
     
