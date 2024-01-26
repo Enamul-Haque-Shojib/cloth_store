@@ -205,6 +205,12 @@ position: relative;
     font-size: 50px;
 }
 
+.cartlist-contain{
+    
+    width: 100vw;
+    height: 100vh;
+}
+
 
 
 
