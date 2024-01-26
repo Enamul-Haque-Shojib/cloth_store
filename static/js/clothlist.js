@@ -115,7 +115,7 @@ const displayCategory = (categories) =>{
             count_cat=1;
         }
 
-        div.innerText = `
+        div.innerHTML = `
         <h4>${category.name}</h4>
         `; 
          
