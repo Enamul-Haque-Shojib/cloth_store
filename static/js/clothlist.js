@@ -116,7 +116,7 @@ const displayCategory = (categories) =>{
         }
 
         div.innerHTML = `
-        <h4>${category.name}</h4>
+        <h4 class="text-white">${category.name.toUpperCase()}</h4>
         `; 
          
          
