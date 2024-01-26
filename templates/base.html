@@ -8,6 +8,9 @@
     <title>Gorgeous Boutique</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg background-color">
@@ -22,6 +25,9 @@
             
               <li class="nav-item">
                 <a class="nav-link active text-success fw-bold" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-success fw-bold" aria-current="page" href="{% url 'about_us' %}">About Us</a>
               </li>
              
               
@@ -69,13 +75,13 @@
         <div class="text-center m-auto d-flex flex-row justify-content-center align-items-center">
           <div class="row w-100 d-flex flex-row justify-content-center">
             <div class="col-lg-2 col-sm-12 text-white py-4 d-lg-flex flex-lg-column justify-content-center align-items-center ">
-                <a href="{% url 'home' %}" class="text-decoration-none"><h5 class="text-white">Gorgeous Boutique</h5></a>
+                <h5 class="text-white">Gorgeous Boutique</h5>
             </div>
             <div class="col-lg-2 col-sm-12 text-white py-4 d-lg-flex flex-lg-row justify-content-center align-items-center order-lg-1 order-sm-3">
-            <a href="https://twitter.com/" target="_blank" class="text-decoration-none text-white"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.facebook.com/" target="_blank" class="text-decoration-none text-white"><i class="fa-brands fa-facebook m-1"></i></a>
-            <a href="https://www.tiktok.com/" target="_blank" class="text-decoration-none text-white"><i class="fa-brands fa-tiktok m-1"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" class="text-decoration-none text-white"><i class="fa-brands fa-instagram m-1"></i></a>
+              <i class="fa-brands fa-twitter m-1"></i>
+            <i class="fa-brands fa-facebook m-1"></i>
+            <i class="fa-brands fa-tiktok m-1"></i>
+            <i class="fa-brands fa-instagram m-1"></i>
             </div>
             <div class="col-lg-2 col-sm-12 text-white py-4 text-lg-start text-sm-center order-lg-2 order-sm-1">
               <h6>Services</h6>
@@ -122,7 +128,9 @@
       
     
       <script src="{% static 'js/clothlist.js' %}"></script>
-      
+
+      <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+
       <script src="https://kit.fontawesome.com/178d1484e3.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+    
+   
+<div class="container my-5 pb-5">
+    <h1 class="text-center fw-light text-danger my-5">About Us</h1>
+    <div class="mb-3" style="max-width: 100%;">
+      <div class="row g-0">
+        <div class="col-lg-6 col-sm-12 d-sm-flex flex-sm-column justify-content-sm-center align-items-sm-center">
+          <img src="{% static 'images/collections.jpg' %}" class="img-fluid rounded-2" alt="...">
+        </div>
+        <div class="col-lg-6 col-sm-12 ps-lg-2 p-sm-0">
+          <div class="card-body">
+            <small>EXPLORE OUR COLLECTIONS</small>
+            <h1 class="card-title fw-light fashion-title mb-2">Innovative, An Unobtrusive & Honest Beauty!</h1>
+            <p class="card-text">Our values are upheld within high quality tailoring, fabric insight and innovative design alongside the desire for innovative and the natural beauty with versatility and top of mind allowing the investment pieces.</p>
+            <p class="card-text">Our production lines are intentionally small with a focus on natural fabrications and unique seasonless design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+    
+    
+{% endblock %}
