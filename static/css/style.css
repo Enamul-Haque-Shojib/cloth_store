@@ -10,7 +10,7 @@
 
 .pin_container{
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--card_width));
