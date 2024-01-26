@@ -24,6 +24,8 @@
     padding: 0px;
     margin: 5px;
     border-radius: var(--card_border_radius);
+    background-color: black;
+    color: white;
     
 }
 
