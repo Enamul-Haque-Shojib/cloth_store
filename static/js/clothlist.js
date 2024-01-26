@@ -51,6 +51,7 @@ const displayColor = (colors) =>{
     colors.forEach(color => {
         // console.log(color)
         const li = document.createElement("li");
+        li.className = 'list-group-item'
         li.innerHTML = `
         <a class="dropdown-item" href="#" onclick="searchItem('${color.name}')">${color.name}</a>
         `;   
