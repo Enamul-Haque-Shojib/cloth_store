@@ -166,7 +166,7 @@ const displayCloth = (cloths) =>{
         div.className = 'col-lg-4 col-sm-12 my-3 ';
         div.innerHTML = `
         
-        <div class="h-100 shadow p-3 bg-body-tertiary rounded">
+        <div class="card h-100 rounded">
           <div class="card-body">
             <img src="${cloth.image}" class="card-img-top card-image" alt="...">
             <h5 class="card-title mt-2 text-danger">${cloth.name}</h5>
