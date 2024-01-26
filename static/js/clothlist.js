@@ -19,6 +19,7 @@ const displaySize = (sizes) =>{
     sizes.forEach(size => {
         // console.log(size)
         const li = document.createElement("li");
+        li.className = 'list-group-item'
         li.innerHTML = `
         <a class="dropdown-item" href="#" onclick="searchItem('${size.name}')">${size.name}</a>
         `;   
