@@ -95,6 +95,12 @@ const displayCategory = (categories) =>{
     categories.forEach(category => {
         // console.log(category)
         const div = document.createElement("div");
+
+        div.addEventListener('click', function handleClick(event) {
+            searchItem(category.name)
+          });
+
+
         if (count_cat == 1){
             div.className = 'card card_small';
             div.style.backgroundImage = `url('${category.image}')`; 
@@ -108,9 +114,9 @@ const displayCategory = (categories) =>{
             div.style.backgroundImage = `url('${category.image}')`;
             count_cat=1;
         }
-        
-        div.innerHTML = `
-        <div onclick="searchItem('${category.name}')">${category.name}</div>
+
+        div.innerText = `
+        <h4>${category.name}</h4>
         `; 
          
          
