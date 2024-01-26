@@ -199,6 +199,9 @@ const displayCloth = (cloths) =>{
                 else if(item=='Blue'){
                     return `<span><img src="../static/images/blue.png" class="color-image" alt="..."></span>`
                 }
+                else if(item=='Yellow'){
+                    return `<span><img src="../static/images/yellow.png" class="color-image" alt="..."></span>`
+                }
                 
             }).join(' ')}
             </p>
