@@ -218,9 +218,10 @@ position: relative;
 }
 
 
-.cloth-add{
+.cloth-acc{
     position:sticky;
     left:0;
+    top:0;
 }
 .cloth-list{
     position: relative;
