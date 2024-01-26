@@ -24,6 +24,7 @@
     padding: 0px;
     margin: 5px;
     border-radius: var(--card_border_radius);
+    cursor: pointer;
     
     
 }
@@ -249,7 +250,7 @@ position: relative;
 
     .pin_container{
         width: 100%;
-        height: 150vh;
+        height: 120vh;
         
       
     
@@ -265,7 +266,7 @@ position: relative;
 
     .pin_container{
         width: 100%;
-        height: 150vh;
+        height: 190vh;
         
       
     
