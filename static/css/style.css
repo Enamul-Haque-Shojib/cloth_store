@@ -29,15 +29,24 @@
 
 .card_small{
     grid-row-end: span var(--card_small);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
     
     
 }
 .card_medium{
     grid-row-end: span var(--card_medium);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
    
 }
 .card_large{
     grid-row-end: span var(--card_large);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
     
 }
 
