@@ -113,6 +113,7 @@ const displayCategory = (categories) =>{
             div.className = 'card card_medium';
             div.style.backgroundImage = `url('${category.image}')`;
             count_cat=1;
+            
         }
 
         div.innerHTML = `
