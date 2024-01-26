@@ -200,6 +200,14 @@ position: relative;
     height: 100%;
 }
 
+
+.fashion-title{
+    font-size: 50px;
+}
+
+
+
+
 .prev {
     left: -25px;
 }
