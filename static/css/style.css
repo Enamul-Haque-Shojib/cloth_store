@@ -218,6 +218,14 @@ position: relative;
 }
 
 
+.cloth-add{
+    position:sticky;
+    left:0;
+}
+.cloth-list{
+    position: relative;
+}
+
 
 
 .prev {
