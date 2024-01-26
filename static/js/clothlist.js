@@ -102,15 +102,15 @@ const displayCategory = (categories) =>{
 
 
         if (count_cat == 1){
-            div.className = 'card card_large opacity-75';
+            div.className = 'card card_large';
             div.style.backgroundImage = `url('${category.image}')`; 
             count_cat++;
         }else if(count_cat==2){
-            div.className = 'card card_small opacity-75';
+            div.className = 'card card_small';
             div.style.backgroundImage = `url('${category.image}')`;
             count_cat++;
         }else if(count_cat==3){
-            div.className = 'card card_medium opacity-75';
+            div.className = 'card card_medium';
             div.style.backgroundImage = `url('${category.image}')`;
             count_cat=1;
         }

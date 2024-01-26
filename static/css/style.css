@@ -30,32 +30,73 @@
 
 .card_small{
     grid-row-end: span var(--card_small);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-color: black;
-    color: white;
     
+    position: relative; 
+    /* height: 100vh;
+    width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
+    background-size: cover;
+     
 }
+
+.card_small::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+}
+
 .card_medium{
     grid-row-end: span var(--card_medium);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-color: black;
-    color: white;
+
+    position: relative; 
+    /* height: 100vh;
+    width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-size: cover;
    
 }
+
+.card_medium::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+}
+
 .card_large{
     grid-row-end: span var(--card_large);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-color: black;
     
-    color: white;
+    position: relative; 
+    /* height: 100vh;
+    width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
+    background-size: cover;
+}
+
+.card_large::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
 }
 
 
