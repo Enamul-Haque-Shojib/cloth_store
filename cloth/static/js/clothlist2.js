@@ -28,7 +28,7 @@ const loadClothDetails=()=>{
         <img src="${cloth.image}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-lg-8">
-        <div class="card-body">
+        <div class="card-body ps-2">
         <h2 class="card-title fw-bold">Name: ${cloth.name}</h2>
         <p class="card-text fw-bold fs-4">Price: $${cloth.price}</p>
         <p class="card-text">Description: ${cloth.description}</p>
