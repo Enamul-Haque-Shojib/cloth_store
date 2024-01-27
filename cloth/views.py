@@ -296,13 +296,13 @@ class ClothWishListDeleteView(generics.DestroyAPIView):
 
 def BuyNow(request):
     
-    models.ClothCartList.objects.all().delete()
+    models.ClothCartList.objects.filter(author = request.user).delete()
     context= {}    
     return render(request, 'cloth_cartlist.html', context)
 
 def deleteWishlistAll(request):
     
-    models.ClothWishList.objects.all().delete()
+    models.ClothWishList.objects.filter(author = request.user).delete()
     context= {}    
     return render(request, 'cloth_wishlist.html', context)
 
