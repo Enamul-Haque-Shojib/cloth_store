@@ -19,7 +19,7 @@ const loadClothDetails=()=>{
         loadRecommendCloth(cloth.category, cloth.clothid);
         const parent = document.getElementById('cloth-details');
         const div = document.createElement("div");
-        div.className = "row g-0 shadow p-3 bg-body-tertiary rounded"
+        div.className = "row g-0 "
         div.innerHTML = `
 
 
