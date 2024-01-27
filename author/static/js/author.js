@@ -38,7 +38,7 @@ const handleRegistration = (event) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            console.log('................>>>>>>>',data);
             window.location.href = "https://cloth-store-3scu.onrender.com/author/reg/";
           })
           .catch(err => console.error(err));
@@ -79,7 +79,7 @@ const handleRegistration = (event) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data);
+          console.log('..................>>>>>',data);
   
           if (data.token && data.user_id) {
             localStorage.setItem("token", data.token);
