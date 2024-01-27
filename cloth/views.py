@@ -125,7 +125,7 @@ class ClothCartListView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         count_price = 0
-        for obj in models.ClothCartList.objects.all():
+        for obj in models.ClothCartList.objects.filter(author = self.request.user):
             count_price = count_price + obj.price
         print(count_price)
         context = {'total_price' : count_price}
