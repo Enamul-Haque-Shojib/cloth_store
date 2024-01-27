@@ -1,6 +1,7 @@
 from rest_framework.routers import DefaultRouter
 from django.urls import path, include
 from . import views
+from django.contrib.auth import views as auth_views
 
 router = DefaultRouter() 
 
@@ -14,4 +15,9 @@ urlpatterns = [
     path('reg/', views.RegistrationView.as_view(), name = 'reg'),
     path('log/', views.LoginView.as_view(), name = 'log'),
     path('profile/', views.ProfileView.as_view(), name = 'profile'),
+
+    path('passwordreset/', auth_views.PasswordResetView.as_view(template_name="password_reset_form.html"), name = 'password_reset'),
+    path('passwordresetdone/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_done.html"), name = 'password_reset_done'),
+    path('passwordresetconfirm/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(template_name="password_reset_confirm.html"), name = 'password_reset_confirm'),
+    path('passwordresetcomplete/', auth_views.PasswordResetCompleteView.as_view(template_name="password_reset_complete.html"), name = 'password_reset_complete'),
 ]
