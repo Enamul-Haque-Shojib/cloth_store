@@ -19,12 +19,12 @@ const loadClothDetails=()=>{
         loadRecommendCloth(cloth.category, cloth.clothid);
         const parent = document.getElementById('cloth-details');
         const div = document.createElement("div");
-        div.className = "row g-0"
+        div.className = "row g-0 shadow p-3 bg-body-tertiary rounded"
         div.innerHTML = `
 
 
 
-        <div class="col-lg-4 shadow p-3 bg-body-tertiary rounded">
+        <div class="col-lg-4">
         <img src="${cloth.image}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-lg-8">
