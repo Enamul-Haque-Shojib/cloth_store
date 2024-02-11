@@ -33,7 +33,7 @@
               {% if request.user.is_authenticated %}
              
               <a href="{% url 'cloth_wishlist' %}" class="btn text-danger ms-3"><i class="fa-solid fa-heart"></i></a>
-              <a href="{% url 'cloth_cartlist' %}" class="btn text-danger ms-3"><i class="fa-solid fa-cart-shopping"></i></i></a>
+              <a href="{% url 'cloth_cartlist' %}" class="btn text-danger ms-3"><i class="fa-solid fa-cart-shopping"></i></a>
               <a href="{% url 'profile' %}" class=" ms-3 nav-profile-image"><img src="{% static 'images/profile1.png' %}" alt=""></a>
               <form method="post" action="{% url 'logout' %}">
                 {% csrf_token %}

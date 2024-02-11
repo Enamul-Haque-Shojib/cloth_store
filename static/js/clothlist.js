@@ -78,19 +78,7 @@ const loadCategory = () =>{
 };
 
 
-// const displayCategory = (categories) =>{
-//     const parent = document.getElementById('category-container');
-//     categories.forEach(category => {
-//         // console.log(category)
-//         const div = document.createElement("div");
-//         div.className = 'col text-dark btn btn-outline-warning';
-//         div.innerHTML = `
-//         <div onclick="searchItem('${category.name}')">${category.name}</div>
-//         `;  
-         
-//         parent.appendChild(div);     
-//     });
-// }
+
 const displayCategory = (categories) =>{
     const parent = document.getElementById('category-container');
     let count_cat = 1;

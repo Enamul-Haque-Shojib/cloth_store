@@ -80,7 +80,7 @@ const handleRegistration = (event) => {
         .then((res) => res.json())
         .then((data) => {
           console.log('..................>>>>>',data);
-  
+          document.getElementById("login-msg").innerText=data.error;
           if (data.token && data.user_id) {
             localStorage.setItem("token", data.token);
             localStorage.setItem("user_id", data.user_id);
