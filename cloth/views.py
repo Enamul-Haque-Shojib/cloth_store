@@ -37,10 +37,6 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 
 
-
-
-
-
 class ClothWishListFilter(filters.BaseFilterBackend):
     def filter_queryset(self, request, query_set, view):
         u = request.user
