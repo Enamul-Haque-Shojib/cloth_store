@@ -1,13 +1,9 @@
 
 
 
-
-
-
-
 const loadSize = () =>{
 
-    fetch(`https://cloth-store-3scu.onrender.com/cloth/size/`)
+    fetch(`http://127.0.0.1:8000/cloth/size/`)
     .then((res) => res.json())
     .then((data) => displaySize(data))
     .catch((err) => console.log(err));
@@ -40,7 +36,7 @@ loadSize();
 
 const loadColor = () =>{
 
-    fetch(`https://cloth-store-3scu.onrender.com/cloth/color/`)
+    fetch(`http://127.0.0.1:8000/cloth/color/`)
     .then((res) => res.json())
     .then((data) => displayColor(data))
     .catch((err) => console.log(err));
@@ -48,9 +44,10 @@ const loadColor = () =>{
 
 
 const displayColor = (colors) =>{
+    console.log(colors)
     const parent = document.getElementById('color-container');
     colors.forEach(color => {
-        // console.log(color)
+        console.log(color)
         const li = document.createElement("li");
         li.className = 'list-group-item'
         li.innerHTML = `
@@ -71,7 +68,7 @@ loadColor();
 
 const loadCategory = () =>{
 
-    fetch(`https://cloth-store-3scu.onrender.com/cloth/category/`)
+    fetch(`http://127.0.0.1:8000/cloth/category/`)
     .then((res) => res.json())
     .then((data) => displayCategory(data))
     .catch((err) => console.log(err));
@@ -80,10 +77,11 @@ const loadCategory = () =>{
 
 
 const displayCategory = (categories) =>{
+    console.log(categories)
     const parent = document.getElementById('category-container');
     let count_cat = 1;
     categories.forEach(category => {
-        // console.log(category)
+        console.log(category)
         const div = document.createElement("div");
 
         div.addEventListener('click', function handleClick(event) {
@@ -132,13 +130,13 @@ parent.innerHTML = ``;
 let url;
 if (querySearch.search){
   
-  url = `https://cloth-store-3scu.onrender.com/cloth/list/?search=${querySearch.search}`
+  url = `http://127.0.0.1:8000/cloth/list/?search=${querySearch.search}`
 }else if (querySearch.order){
   
-  url = `https://cloth-store-3scu.onrender.com/cloth/list/?ordering=${querySearch.order}` 
+  url = `http://127.0.0.1:8000/cloth/list/?ordering=${querySearch.order}` 
 }else{
   
-  url = `https://cloth-store-3scu.onrender.com/cloth/list/`
+  url = `http://127.0.0.1:8000/cloth/list/`
 }
   
     fetch(url)
@@ -149,6 +147,7 @@ if (querySearch.search){
 
 
 const displayCloth = (cloths) =>{
+    console.log(cloths)
     cloths.forEach(cloth => {
         // console.log(cloth)
         
@@ -200,7 +199,7 @@ const displayCloth = (cloths) =>{
                 return `<span>${item}</span>`
             }).join(", ")}
             </p>
-            <a href="https://cloth-store-3scu.onrender.com/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning d-flex justify-content-center align-item-center'>View Details</a>
+            <a href="http://127.0.0.1:8000/cloth/clothdetails/${cloth.clothid}" class='text-decoration-none text-dark btn btn-warning d-flex justify-content-center align-item-center'>View Details</a>
             
             
             
